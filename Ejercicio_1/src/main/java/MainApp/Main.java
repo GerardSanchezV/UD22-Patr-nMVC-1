@@ -15,6 +15,7 @@ public class Main {
 		vistaTable vistaTable1 = new vistaTable();
 		vistaUpdateCliente vistaUpdateCliente1 = new vistaUpdateCliente();;
 		ClienteModel clienteModel = new ClienteModel();
-		new Controlador(vistaMain1, vistaCreateCliente1, vistaTable1, vistaUpdateCliente1, clienteModel, vistaCreateCliente1);
+		
+		Controlador controlador = new Controlador (vistaMain1, vistaCreateCliente1, vistaTable1, vistaUpdateCliente1, clienteModel, vistaCreateCliente1);
 	}
 }

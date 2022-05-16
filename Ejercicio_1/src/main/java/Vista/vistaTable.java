@@ -56,7 +56,7 @@ public class vistaTable extends JFrame {
 		contentPane.add(separator);
 		
 		JLabel lblPersona = new JLabel("Persona");
-		lblPersona.setBounds(10, 222, 45, 13);
+		lblPersona.setBounds(20, 222, 45, 20);
 		contentPane.add(lblPersona);
 		
 	}

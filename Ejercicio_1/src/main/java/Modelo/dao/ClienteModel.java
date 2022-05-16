@@ -3,17 +3,18 @@ package Modelo.dao;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import Modelo.ConexionDB.ConexionMysql;
 import Modelo.ConexionDB.ConexionDB;
 import Modelo.dto.Clientedto;
 
 public class ClienteModel {
 
-	ConexionDB ConexionMysql = new ConexionDB();
+	ConexionMysql conexionMysql = new ConexionMysql();
 
 
 	public void createInsert(Clientedto cliente) {
 		try {
-			Connection conexion = ConexionMysql.crearConexion();
+			Connection conexion = conexionMysql.crearConexion();
 			String Querydb = "USE cliente;";
 			Statement stdb = conexion.createStatement();
 			stdb.executeUpdate(Querydb);
@@ -25,7 +26,7 @@ public class ClienteModel {
 			conexion.close();
 			System.out.println("Inserts  creados  con exito!");
 		} catch (SQLException e) {
-			System.out.println("No se a podido crear los inserts en la tabla ");
+			System.out.println("No se a podido crear los inserts en la tabla! ");
 			System.out.println(e);
 		}
 	}
@@ -88,7 +89,7 @@ public class ClienteModel {
 					String dniSelect = resultSet.getString("dni");
 					int fechaSelect = Integer.parseInt(resultSet.getString("fecha"));
 
-					new Clientedto (nomSelect,apellidoSelect,direccionSelect,dniSelect,fechaSelect);
+					cliente = new Clientedto (nomSelect,apellidoSelect,direccionSelect,dniSelect,fechaSelect);
 			      }
 				
 				

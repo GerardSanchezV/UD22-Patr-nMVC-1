@@ -13,6 +13,7 @@ import Vista.vistaUpdateCliente;
 public class Controlador implements ActionListener {
 
 	// Instanciamos los objetos de las clases:
+	// Por Conventions, las clases suelen empezar por mayúscula
 	 private vistaMain vistaMain1;
 	 private vistaCreateCliente vistaCreateCliente1;
 	 private vistaTable vistaTable1;
@@ -25,14 +26,14 @@ public class Controlador implements ActionListener {
 	 
 	 // Constructor
 	 
-	public Controlador(vistaMain vistaMain1, vistaCreateCliente vistaCreateClient1, vistaTable vistaTable1, vistaUpdateCliente vistaUpdateCliente1,
+	public Controlador(vistaMain viewMain1, vistaCreateCliente viewCreateClient1, vistaTable vistaTable1, vistaUpdateCliente viewUpdateCliente1,
 			ClienteModel clienteModel, vistaCreateCliente vistaCreateCliente1) {
 		super();
-		this.vistaMain1 = vistaMain1;
+		this.vistaMain1 = viewMain1;
 		this.vistaTable1 = vistaTable1;
 		this.vistaCreateCliente1 = vistaCreateCliente1;
 		this.clienteModel = clienteModel;
-		this.vistaUpdateCliente1 = vistaUpdateCliente1;
+	
 		
 		// Acceder a los botones de la Vista vistaMain
 		this.vistaMain1.btnCrearCliente.addActionListener(this);
@@ -44,16 +45,18 @@ public class Controlador implements ActionListener {
 		// Utilizar los botones de la vistas en actionPerformed 
 		this.vistaCreateCliente1.btnEnviar.addActionListener(this);
 		this.vistaTable1.btnSalir.addActionListener(this);
-		this.vistaUpdateCliente1.btnEnviar.addActionListener(this);
+//		this.vistaUpdateCliente1.btnEnviar.addActionListener(this);
 		this.vistaTable1.btnBuscarDNI.addActionListener(this);
 		this.vistaTable1.btnBuscarID.addActionListener(this);
-		this.vistaUpdateCliente1.btnEditar.addActionListener(this);
-		this.vistaUpdateCliente1.buscarClienteDni.addActionListener(this);
+
+		
+//		this.vistaUpdateCliente1.btnEditar.addActionListener(this);
+//		this.vistaUpdateCliente1.buscarClienteDni.addActionListener(this);
 
 		
 		
 
-		vistaMain1.setVisible(true);
+		viewMain1.setVisible(true);
 	}
 
 
@@ -64,15 +67,18 @@ public class Controlador implements ActionListener {
 		if(evento.getSource()== this.vistaMain1.btnCrearCliente) {
 			vistaCreateCliente1.setVisible(true);
 			vistaMain1.setVisible(false);
-		}		
+		}
+		
 		if(evento.getSource()== this.vistaMain1.btnVerClientes) {
 			vistaTable1.setVisible(true);
 			vistaMain1.setVisible(false);
 		}
-				
+		
+		
 		if(evento.getSource()== this.vistaMain1.btnEditarCliente) {
 			vistaUpdateCliente1.setVisible(true);
-			vistaMain1.setVisible(false);		
+			vistaMain1.setVisible(false);
+			
 		}
 		
 		//borrar clientes
@@ -81,7 +87,8 @@ public class Controlador implements ActionListener {
 			vistaMain1.tfBorrarCliente.setText("");
 		}
 		
-	
+		
+
 		// Botones de vistaTable
 		if (evento.getSource() == this.vistaTable1.btnBuscarDNI) {
 			vistaTable1.setVisible(true);

@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import Modelo.Config;
+
 public class ConexionMysql {
 
 	Connection connectionObj;

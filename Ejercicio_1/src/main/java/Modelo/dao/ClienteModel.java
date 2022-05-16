@@ -3,13 +3,12 @@ package Modelo.dao;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-import Modelo.ConexionDB.ConexionMysql;
 import Modelo.ConexionDB.ConexionDB;
 import Modelo.dto.Clientedto;
 
 public class ClienteModel {
 
-	ConexionMysql conexionMysql = new ConexionMysql();
+	ConexionDB conexionMysql = new ConexionDB();
 
 
 	public void createInsert(Clientedto cliente) {
@@ -36,7 +35,7 @@ public class ClienteModel {
 	
 	public void createUpdate(Clientedto cliente) {
 		try {
-			Connection conexion = ConexionMysql.crearConexion();
+			Connection conexion = conexionMysql.crearConexion();
 			String Querydb = "USE cliente;";
 			Statement stdb = conexion.createStatement();
 			stdb.executeUpdate(Querydb);
@@ -61,7 +60,7 @@ public class ClienteModel {
 			Clientedto cliente = new Clientedto();
 
 			try {
-				Connection conexion = ConexionMysql.crearConexion();
+				Connection conexion = conexionMysql.crearConexion();
 				String Querydb = "USE clientevideo;";
 				Statement stdb = conexion.createStatement();
 				stdb.executeUpdate(Querydb);
@@ -111,7 +110,7 @@ public class ClienteModel {
 	
 	public void selectDB() {
 		try {
-			Connection conexion = ConexionMysql.crearConexion();
+			Connection conexion = conexionMysql.crearConexion();
 			String Querydb = "USE cliente;";
 			Statement stdb = conexion.createStatement();
 			stdb.executeUpdate(Querydb);
@@ -149,7 +148,7 @@ public class ClienteModel {
 	
 		public void deleteOne(String id) {
 			try {
-				Connection conexion = ConexionMysql.crearConexion();
+				Connection conexion = conexionMysql.crearConexion();
 				String Querydb = "USE cliente;";
 				Statement stdb = conexion.createStatement();
 				stdb.executeUpdate(Querydb);

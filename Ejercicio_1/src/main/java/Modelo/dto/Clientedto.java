@@ -6,24 +6,23 @@ public class Clientedto {
 	private String apellido;
 	private String direccion;
 	private String dni; 
-	private int fecha;
+	private String fecha;
 	
 	
 	
 	
 	public Clientedto() {
-		super();
 	}
 
 
 
-	public Clientedto(String nombre, String apellido, String direccion, String dni, int fecha) {
+	public Clientedto(String nombre, String apellido, String direccion, String dni, String fechaSelect) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.direccion = direccion;
 		this.dni = dni;
-		this.fecha = fecha;
+		this.fecha = fechaSelect;
 	}
 
 
@@ -60,11 +59,11 @@ public class Clientedto {
 		this.dni = dni;
 	}
 
-	public int getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(int fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 

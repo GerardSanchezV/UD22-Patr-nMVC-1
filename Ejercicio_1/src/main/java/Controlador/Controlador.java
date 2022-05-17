@@ -98,7 +98,7 @@ public class Controlador implements ActionListener {
 		//crear cliente
 		if(evento.getSource()== this.vistaCreateCliente1.btnEnviar) {
 			System.out.println("Intentando crear Cliente");
-			Clientedto1 = new Clientedto(vistaCreateCliente1.tfNombre.getText(), vistaCreateCliente1.tfApellido.getText(), vistaCreateCliente1.tfDireccion.getText(), vistaCreateCliente1.tfDni.getText(), Integer.parseInt(vistaCreateCliente1.tfFecha.getText()));
+			Clientedto1 = new Clientedto(vistaCreateCliente1.tfNombre.getText(), vistaCreateCliente1.tfApellido.getText(), vistaCreateCliente1.tfDireccion.getText(), vistaCreateCliente1.tfDni.getText(),vistaCreateCliente1.tfFecha.getText());
 			clienteModel.createInsert(Clientedto1);
 		}
 
@@ -116,7 +116,7 @@ public class Controlador implements ActionListener {
 			vistaUpdateCliente1.tfApellido.setText(cliente.getApellido());
 			vistaUpdateCliente1.tfDireccion.setText(cliente.getDireccion());
 			vistaUpdateCliente1.tfDni.setText(cliente.getDni());
-
+			vistaUpdateCliente1.tfFecha.setText(cliente.getFecha());
 
 			
 		}
@@ -126,7 +126,7 @@ public class Controlador implements ActionListener {
 		
 		if(evento.getSource()== this.vistaUpdateCliente1.btnEnviar) {
 			
-			Clientedto cliente = new Clientedto(vistaUpdateCliente1.tfNombre.getText(),vistaUpdateCliente1.tfApellido.getText(),vistaUpdateCliente1.tfDireccion.getText(),vistaUpdateCliente1.tfDni.getText(),23);
+			Clientedto cliente = new Clientedto(vistaUpdateCliente1.tfNombre.getText(),vistaUpdateCliente1.tfApellido.getText(),vistaUpdateCliente1.tfDireccion.getText(),vistaUpdateCliente1.tfDni.getText(),vistaUpdateCliente1.tfFecha.getText());
 
 			clienteModel.createUpdate(cliente);
 			

@@ -41,14 +41,12 @@ public class ClienteModel {
 			stdb.executeUpdate(Querydb);
 			String Query = "UPDATE cliente SET NOMBRE ='"+cliente.getNombre()+"',APELLIDO='"+cliente.getApellido()+"',DIRECCION='"+cliente.getDireccion()+"', DNI ="+cliente.getDni()+" , FECHA="+cliente.getFecha()+" WHERE dni="+cliente.getDni()+"";
 			System.out.println(Query);
-
 			Statement st = conexion.createStatement();
 			st.executeUpdate(Query);
 			
 			conexion.close();
 			System.out.println("Inserts  creados  con exito!");
 		} catch (SQLException e) {
-			// TODO: handle exception
 			System.out.println("No se a podido crear los inserts en la tabla ");
 			System.out.println(e);
 		}
@@ -86,7 +84,7 @@ public class ClienteModel {
 					String apellidoSelect = resultSet.getString("apellido");
 					String direccionSelect = resultSet.getString("direccion");
 					String dniSelect = resultSet.getString("dni");
-					int fechaSelect = Integer.parseInt(resultSet.getString("fecha"));
+					String fechaSelect = resultSet.getString("fecha");
 
 					cliente = new Clientedto (nomSelect,apellidoSelect,direccionSelect,dniSelect,fechaSelect);
 			      }

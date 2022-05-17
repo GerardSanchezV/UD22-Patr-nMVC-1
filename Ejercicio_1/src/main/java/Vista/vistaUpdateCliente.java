@@ -1,6 +1,4 @@
 package Vista;
-import java.awt.EventQueue;
-import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -19,10 +17,12 @@ public class vistaUpdateCliente extends JFrame {
 	public JTextField tfApellido = new JTextField();
 	public JTextField tfDireccion = new JTextField();
 	public JTextField tfDni = new JTextField();
+	public JTextField tfFecha = new JTextField();
 	public JButton btnEnviar = new JButton("Enviar");
 	public JTextField 	buscarClienteDni = new JTextField();
 
 	public JButton btnEditar = new JButton("Buscar");
+	
 	public vistaUpdateCliente() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
